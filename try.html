@@ -1,0 +1,95 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.carouFredSel.js"></script>
+</head>
+<body>
+<!-- fire plugin onDocumentReady -->
+		<script type="text/javascript" language="javascript">
+			$(function() {
+
+				//	Basic carousel, no options
+				$('#foo0').carouFredSel();
+
+				//	Basic carousel + timer, using CSS-transitions
+				$('#foo1').carouFredSel({
+					auto: {
+						pauseOnHover: 'resume',
+						progress: '#timer1'
+					}
+				}, {
+					transition: true
+				});
+
+				//	Scrolled by user interaction
+				$('#foo2').carouFredSel({
+					auto: false,
+					prev: '#prev2',
+					next: '#next2',
+					pagination: "#pager2",
+					mousewheel: true,
+					swipe: {
+						onMouse: true,
+						onTouch: true
+					}
+				});
+
+				//	Variable number of visible items with variable sizes
+				$('#foo3').carouFredSel({
+					width: 360,
+					height: 'auto',
+					prev: '#prev3',
+					next: '#next3',
+					auto: false
+				});
+
+				//	Responsive layout, resizing the items
+				$('#foo4').carouFredSel({
+					responsive: true,
+					width: '100%',
+					scroll: 2,
+					items: {
+						width: 400,
+					//	height: '30%',	//	optionally resize item-height
+						visible: {
+							min: 2,
+							max: 6
+						}
+					}
+				});
+
+				//	Fuild layout, centering the items
+				$('#foo5').carouFredSel({
+					width: '100%',
+					scroll: 2
+				});
+
+			});
+		</script>
+
+
+
+<<div class="list_carousel">
+	<div id="foo2">
+		<img src="/examples/images/small/basketball.jpg" alt="basketball" width="140" height="140" />
+		<img src="/examples/images/small/beachtree.jpg" alt="beachtree" width="140" height="140" />
+		<img src="/examples/images/small/cupcackes.jpg" alt="cupcackes" width="140" height="140" />
+		<img src="/examples/images/small/hangmat.jpg" alt="hangmat" width="140" height="140" />
+		<img src="/examples/images/small/new_york.jpg" alt="new york" width="140" height="140" />
+		<img src="/examples/images/small/laundry.jpg" alt="laundry" width="140" height="140" />
+		<img src="/examples/images/small/mom_son.jpg" alt="mom son" width="140" height="140" />
+		<img src="/examples/images/small/picknick.jpg" alt="picknick" width="140" height="140" />
+		<img src="/examples/images/small/shoes.jpg" alt="shoes" width="140" height="140" />
+		<img src="/examples/images/small/paris.jpg" alt="paris" width="140" height="140" />
+		<img src="/examples/images/small/sunbading.jpg" alt="sunbading" width="140" height="140" />
+		<img src="/examples/images/small/yellow_couple.jpg" alt="yellow couple" width="140" height="140" />
+	</div>
+	<div class="clearfix"></div>
+	<a class="prev" id="foo2_prev" href="#"><span>prev</span></a>
+	<a class="next" id="foo2_next" href="#"><span>next</span></a>
+	<div class="pagination" id="foo2_pag"></div>
+</div>
+
+
+</body>
+</html>
